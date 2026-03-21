@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-//Primer inciso generar la seguncia M=9, c=1, r=3 y a = 4.
+//Primer inciso generar la seguncia M=9, c=1, r=3 y a = 4 por el método lineal congruente.
     int c = 1;
     int r =3;
     int M = 9;
@@ -65,9 +65,9 @@ int main() {
     long long r2 = 1;
     long long a2 = 1103515245;
     long long c2 = 12345;
-    long long M2 = 1LL << 31;
+    long long M2 = 1LL << 31; // 2147483648
     long long semilla = r2;
-    int contador = 0;
+    long long contador = 0;
 
     cout <<"Secuencia lo más grande posible:"<<endl;
     cout <<"Eligiendo el Modulo(M) más grande posible en número LONGLONG"<<endl;
@@ -105,10 +105,9 @@ int main() {
 
         contador++;
 
-    }while (contador<100000);
+    }while (contador<M2 && r2 != semilla);
     
-    cout <<"Periodo obtenido con los parametros(limitando las iteraciones a 100000 de otra forma el programa terminaria pasado días):"<< contador<< endl;
-    
+   cout << "Periodo obtenido: " << contador << endl;
 
 
 

@@ -11,7 +11,7 @@ int main() {
 // Regla 30
     uint64_t state = 1ULL << 31;
     uint32_t num_aleatorio = 0;
-    cout << state << "\n";
+    cout << "Semilla: " << state << "\n";
     for (int i = 0; i < 32; ++i) {
         
         for (int j = 64; j--;) {
@@ -33,7 +33,8 @@ int main() {
     cout << "Ahora generemos números pseudoaletorios (entre [0,1]) con el Método del Mapeo Tienda de Campaña"<<"\n";
 
     double miu = 2;
-    double x =  0.29837463; // (aprox) complejo para que no tenga problemas de ciclicidad o periodo corto 
+    double x =  0.78539816; // se utiliza un número complejo para evitar ciclicidad de los números, en este caso
+                            // se utilizo Pi/4 (normalizado entre [0, 1]) aproximado a 8 cifras significativas.
     for(int i = 0; i<10; i++) {
         if (x < 0.5) {
             x = miu *x;
@@ -66,7 +67,7 @@ int main() {
         
         seed = seed*r*(1-seed);
         num[i] = seed;
-        cout << num[i]<<"\n";
+        //cout << num[i]<<"\n";
         
         sum += num[i];
         
